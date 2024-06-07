@@ -59,12 +59,15 @@ void menu() {
             break;
         }
         case 5: {
+            cout << "Batalla" << endl;
+            cout << endl;
+            dojo.imprimirEstudiantes();
             int indice1, indice2;
-            cout << "Ingrese el indice del primer estudiante: ";
+            cout << "Ingrese el índice del primer estudiante: ";
             cin >> indice1;
-            cout << "Ingrese el indice del segundo estudiante: ";
+            cout << "Ingrese el índice del segundo estudiante: ";
             cin >> indice2;
-            //dojo.combate(indice1, indice2);
+            dojo.combate(indice1, indice2);
             break;
         }
         case 6:
