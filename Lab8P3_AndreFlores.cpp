@@ -77,4 +77,5 @@ void menu() {
             cout << "Opcion no valida. Intente de nuevo.\n";
         }
     } while (opcion != 6);
+    dojo.~Dojo();
 }

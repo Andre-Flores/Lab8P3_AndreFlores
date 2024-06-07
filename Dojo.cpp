@@ -11,6 +11,7 @@ void Dojo::agregarEstudiante(string nombre, int nivelCinta) {
 }
 void Dojo::imprimirEstudiantes() {
 	int indice = 0;
+	// solo para imprimir los jugadores con formato y el indice pq lo hice con for each
 	for (Estudiante* student : estudiantes) {
 
 		cout << indice << endl << "Nombre: " << student->getNombre() << endl << "Cinta: " << student->getCinta()->getColorCinta() << endl
@@ -40,6 +41,7 @@ void Dojo::combate(int indice1, int indice2) {
 		indice2 >= 0 && indice2 < estudiantes.size()) {
 		Estudiante* student1 = estudiantes[indice1];
 		Estudiante* student2 = estudiantes[indice2];
+		// para el porcentaje1
 		if (student1->getCinta()->getNivel() == 1) {
 			porcentajeCinta = 0.4;
 		}
@@ -61,7 +63,7 @@ void Dojo::combate(int indice1, int indice2) {
 		else if (student1->getCinta()->getNivel() == 7) {
 			porcentajeCinta = 1.0;
 		}
-		// para el porcentaje
+		// para el porcentaje2
 		if (student2->getCinta()->getNivel() == 1) {
 			porcentajeCinta2 = 0.4;
 		}
@@ -85,8 +87,10 @@ void Dojo::combate(int indice1, int indice2) {
 		}
 		while (student1->getSalud() > 0 && student2->getSalud() > 0) {
 			cout << "Ataca " << student1->getNombre() << endl;
+			// haciendo el calculo del ataque
 			double ataque1 = student1->getFuerza() * porcentajeCinta * (student1->getSalud() / 10.0);
 			cout << "Ataque del Estudiante 1 = " << ataque1 << endl;
+			// haciendo el calculo de la defensa del otro peleador
 			double defensa2 = student2->getResistencia() * porcentajeCinta2 * (student2->getSalud()/ 10.0);
 			cout << "Defensa del Estudiante 2 = " << defensa2 << endl;
 			double danio1 = (ataque1 - defensa2);
